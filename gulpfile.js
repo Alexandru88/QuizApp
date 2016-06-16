@@ -6,7 +6,8 @@ let gulp = require('gulp'),
     babel = require('gulp-babel'),
     concat = require('gulp-concat'),
     sourcemaps = require('gulp-sourcemaps'),
-    sass = require('gulp-sass');
+    sass = require('gulp-sass'),
+    autoprefixer = require('gulp-autoprefixer');
 
 const BASE_PATH = './app';
 
@@ -46,8 +47,12 @@ gulp.task('jsVendor', ['clean'], () => {
 
 // process SASS files and return the stream
 gulp.task('sass', function () {
-    return gulp.src(`${BASE_PATH}/src/sass/*.scss`)
+    return gulp
+        .src(`${BASE_PATH}/src/sass/**/*.scss`)
+        //.pipe(sourcemaps.init())
         .pipe(sass().on('error', sass.logError))
+        //.pipe(sourcemaps.write('maps/'))
+        .pipe(autoprefixer())
         .pipe(gulp.dest(`${BASE_PATH}/src/css`));
 });
 
@@ -77,7 +82,7 @@ gulp.task('default', ['jsVendor', 'jsSrc'], () => {
     // when JS files change, compile and then reload browsers
     gulp.watch(`${BASE_PATH}/src/js/*.js`, ['jsWatch']);
     // when SASS files change compile and then reload browsers
-    gulp.watch(`${BASE_PATH}/src/sass/*.scss`, ['sass']);
+    gulp.watch(`${BASE_PATH}/src/sass/**/*.scss`, ['sass']);
 });
 
 function handleError(err) {
