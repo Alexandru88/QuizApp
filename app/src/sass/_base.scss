@@ -1,0 +1,26 @@
+/******************************************************************************
+*    Base Rules
+******************************************************************************/
+
+body {
+    background: $blue;
+    color: $dark-gray;
+    font-family: $primary-font-stack;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+a {
+    color: $blue;
+    text-decoration: none;
+    &:active,
+    &:focus,
+    &:hover {
+        color: $dark-blue;
+    }
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
