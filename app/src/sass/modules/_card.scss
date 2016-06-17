@@ -1,2 +1,19 @@
+/*=============================================================================
+                                    CARD RULES
+=============================================================================*/
 
+.m-card {
+    position: relative;
+    padding: 40px;
+    border-radius: 6px;
+    
+    &--a {
+        background: $white;
+        box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+    }
+    
+    &--b {
+        border: 2px solid $gray;
+    }
+}
 

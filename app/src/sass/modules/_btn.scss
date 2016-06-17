@@ -1,0 +1,48 @@
+/*=============================================================================
+                                    BUTTON RULES
+=============================================================================*/
+
+.m-btn {
+    display: inline-block;
+    position: relative;
+    padding: 0 40px;
+    border: 0;
+    border-bottom: 4px solid rgba(0, 0, 0, 0.1);
+    border-radius: 40px;
+    background: $blue;
+    color: $light-gray;
+    font-weight: 700;
+    line-height: 3;
+    cursor: pointer;
+    overflow: hidden;
+    
+    &:active,
+    &:focus,
+    &:hover {
+        background: $dark-blue;
+        color: $white;
+    }
+    
+    &--b {
+        background: $light-blue;
+        line-height: 2.5;
+        
+        &:active,
+        &:focus,
+        &:hover {
+            background: darken($light-blue, 25%);
+            color: $white;
+        }
+    }
+    
+    &[disabled] {
+        opacity: 0.4;
+        
+        &:active,
+        &:focus,
+        &:hover {
+            background: $blue;
+            color: $white;
+        }
+    }
+}

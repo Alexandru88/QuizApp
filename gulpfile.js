@@ -53,7 +53,8 @@ gulp.task('sass', function () {
         .pipe(sass().on('error', sass.logError))
         //.pipe(sourcemaps.write('maps/'))
         .pipe(autoprefixer())
-        .pipe(gulp.dest(`${BASE_PATH}/src/css`));
+        .pipe(gulp.dest(`${BASE_PATH}/src/css`))
+        .pipe(browserSync.stream());
 });
 
 // create a task that ensures the `js` task is complete
