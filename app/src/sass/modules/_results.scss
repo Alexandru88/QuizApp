@@ -1,0 +1,29 @@
+/*=============================================================================
+                                    RESULTS RULES
+=============================================================================*/
+
+.m-results {
+    margin-bottom: 40px;
+}
+
+.m-results__score {
+    display: block;
+    font-size: 7em;
+    line-height: 1em;
+    font-weight: 700;
+    text-align: center;
+    
+    .is-passed {
+        color: $green;
+    }
+    
+    .is-failed {
+        color: $red;
+    }
+}
+
+.m-results__description {
+    margin-left: 10px;
+    font-size: 16px;
+    vertical-align: middle;
+}

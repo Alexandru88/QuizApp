@@ -23,9 +23,12 @@
         color: $white;
     }
     
-    &--b {
+    &--share {
+        margin-bottom: 20px;
+        margin-right: 10px;
         background: $light-blue;
         line-height: 2.5;
+        text-align: center;
         
         &:active,
         &:focus,

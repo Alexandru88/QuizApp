@@ -405,6 +405,17 @@ img {
   margin: 40px auto 80px;
   max-width: 800px; }
 
+.l-col {
+  box-sizing: border-box;
+  padding: 5px 0;
+  float: left; }
+
+.l-col--sm {
+  width: 30%; }
+
+.l-col--md {
+  width: 70%; }
+
 .l-margin-bottom--none {
   margin-bottom: 0; }
 
@@ -448,10 +459,13 @@ img {
   .m-btn:active, .m-btn:focus, .m-btn:hover {
     background: #1B5479;
     color: #FFFFFF; }
-  .m-btn--b {
+  .m-btn--share {
+    margin-bottom: 20px;
+    margin-right: 10px;
     background: #24B9D0;
-    line-height: 2.5; }
-    .m-btn--b:active, .m-btn--b:focus, .m-btn--b:hover {
+    line-height: 2.5;
+    text-align: center; }
+    .m-btn--share:active, .m-btn--share:focus, .m-btn--share:hover {
       background: #115863;
       color: #FFFFFF; }
   .m-btn[disabled] {
@@ -471,7 +485,12 @@ img {
     background: #FFFFFF;
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.5); }
   .m-card--b {
+    padding: 10px;
     border: 2px solid #DDDDDD; }
+  .m-card--share {
+    text-align: center; }
+    .m-card--share > p {
+      margin-bottom: 20px; }
 
 /*=============================================================================
                                     TEXT RULES
@@ -530,3 +549,25 @@ img {
       background: #DDDDDD;
       -webkit-transform: translateY(-50%);
               transform: translateY(-50%); }
+
+/*=============================================================================
+                                    RESULTS RULES
+=============================================================================*/
+.m-results {
+  margin-bottom: 40px; }
+
+.m-results__score {
+  display: block;
+  font-size: 7em;
+  line-height: 1em;
+  font-weight: 700;
+  text-align: center; }
+  .m-results__score .is-passed {
+    color: #3ABD2B; }
+  .m-results__score .is-failed {
+    color: #FB2525; }
+
+.m-results__description {
+  margin-left: 10px;
+  font-size: 16px;
+  vertical-align: middle; }
