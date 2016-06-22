@@ -20,6 +20,7 @@
         border: 2px solid $gray;
         border-radius: 6px;
         color: $dark-gray;
+        transition: all .5s;
         
         &:active,
         &:focus,
@@ -27,6 +28,11 @@
         &.is-selected {
             border-color: $blue;
             color: $dark-gray;
+        }
+        
+        &.is-selected {
+            transition: transform .3s;
+            transform: scale(1.025);
         }
         
         &.is-selected::before {

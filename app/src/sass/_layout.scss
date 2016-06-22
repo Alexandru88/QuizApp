@@ -23,6 +23,12 @@
     max-width: 800px;
 }
 
+.l-main {
+    #index & {
+        animation: slideUp .75s;
+    }
+}
+
 .l-col {
     box-sizing: border-box;
     padding: 5px 0;

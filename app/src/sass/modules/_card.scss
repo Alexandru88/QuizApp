@@ -19,6 +19,9 @@
     
     &--share {
         text-align: center;
+        opacity: 0;
+        visibility: hidden;
+        animation: zoomIn .5s 1s forwards;
         
         & > p {
             margin-bottom: 20px;

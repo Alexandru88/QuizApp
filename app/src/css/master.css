@@ -405,6 +405,10 @@ img {
   margin: 40px auto 80px;
   max-width: 800px; }
 
+#index .l-main {
+  -webkit-animation: slideUp .75s;
+          animation: slideUp .75s; }
+
 .l-col {
   box-sizing: border-box;
   padding: 5px 0;
@@ -436,6 +440,9 @@ img {
   text-align: center; }
   .m-brand--top {
     margin-bottom: 40px; }
+    #index .m-brand--top {
+      -webkit-animation: fadeIn .5s, slideDown .5s;
+              animation: fadeIn .5s, slideDown .5s; }
   .m-brand__img {
     display: block;
     margin: 0 auto; }
@@ -455,7 +462,9 @@ img {
   font-weight: 700;
   line-height: 3;
   cursor: pointer;
-  overflow: hidden; }
+  overflow: hidden;
+  -webkit-transition: all .3s;
+  transition: all .3s; }
   .m-btn:active, .m-btn:focus, .m-btn:hover {
     background: #1B5479;
     color: #FFFFFF; }
@@ -488,7 +497,11 @@ img {
     padding: 10px;
     border: 2px solid #DDDDDD; }
   .m-card--share {
-    text-align: center; }
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-animation: zoomIn .5s 1s forwards;
+            animation: zoomIn .5s 1s forwards; }
     .m-card--share > p {
       margin-bottom: 20px; }
 
@@ -530,10 +543,19 @@ img {
     padding-left: 40px;
     border: 2px solid #DDDDDD;
     border-radius: 6px;
-    color: #333333; }
+    color: #333333;
+    -webkit-transition: all .5s;
+    transition: all .5s; }
     .m-quiz__answer:active, .m-quiz__answer:focus, .m-quiz__answer:hover, .m-quiz__answer.is-selected {
       border-color: #2980B9;
       color: #333333; }
+    .m-quiz__answer.is-selected {
+      -webkit-transition: -webkit-transform .3s;
+      transition: -webkit-transform .3s;
+      transition: transform .3s;
+      transition: transform .3s, -webkit-transform .3s;
+      -webkit-transform: scale(1.025);
+              transform: scale(1.025); }
     .m-quiz__answer.is-selected::before {
       background: #2980B9;
       color: #DDDDDD; }
@@ -561,7 +583,9 @@ img {
   font-size: 7em;
   line-height: 1em;
   font-weight: 700;
-  text-align: center; }
+  text-align: center;
+  -webkit-animation: fadeIn 0.5s;
+          animation: fadeIn 0.5s; }
   .m-results__score .is-passed {
     color: #3ABD2B; }
   .m-results__score .is-failed {
@@ -570,4 +594,78 @@ img {
 .m-results__description {
   margin-left: 10px;
   font-size: 16px;
-  vertical-align: middle; }
+  vertical-align: middle;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-animation: fadeIn 1s .5s forwards;
+          animation: fadeIn 1s .5s forwards; }
+
+/*=============================================================================
+                                GLOBAL ANIMATIONS
+=============================================================================*/
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+    visibility: hidden; }
+  to {
+    opacity: 1;
+    visibility: visible; } }
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    visibility: hidden; }
+  to {
+    opacity: 1;
+    visibility: visible; } }
+
+@-webkit-keyframes slideDown {
+  from {
+    -webkit-transform: translateY(-300px);
+            transform: translateY(-300px); }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0); } }
+
+@keyframes slideDown {
+  from {
+    -webkit-transform: translateY(-300px);
+            transform: translateY(-300px); }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0); } }
+
+@-webkit-keyframes slideUp {
+  from {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%); }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0); } }
+
+@keyframes slideUp {
+  from {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%); }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0); } }
+
+@-webkit-keyframes zoomIn {
+  from {
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+            transform: scale3d(0.3, 0.3, 0.3); }
+  100% {
+    opacity: 1;
+    visibility: visible; } }
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+            transform: scale3d(0.3, 0.3, 0.3); }
+  100% {
+    opacity: 1;
+    visibility: visible; } }

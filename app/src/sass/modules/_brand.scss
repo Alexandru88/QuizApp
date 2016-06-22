@@ -8,6 +8,10 @@
     
     &--top {
         margin-bottom: 40px;
+        
+        #index & {
+            animation: fadeIn .5s, slideDown .5s;   
+        }
     }
     
     &__img {
