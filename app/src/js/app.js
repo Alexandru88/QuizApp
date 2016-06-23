@@ -44,6 +44,8 @@ $(document).ready(function () {
         }];
 
         var counter = 0,
+            correctAnswers = 0,
+            userScore,
             $card = $('.m-card'),
             $quiz = $('<div class="m-quiz"></div>'),
             $btnNextQuestion = $('<button id="nextQuestion" class="m-btn" disabled>Next Question</button>');
@@ -54,7 +56,13 @@ $(document).ready(function () {
             $card.on('click', 'a.m-quiz__answer', selectAnswer);
 
             $card.on('click', '#nextQuestion', function () {
+                checkUserAnswer();
                 counter++;
+                if (counter > allQuestions.length - 1) {
+                    calculateUserScore();
+                    //showResults();
+                    return;
+                }
                 changeQuestion();
                 disableButton($(this));
             });
@@ -78,6 +86,18 @@ $(document).ready(function () {
             $('a.m-quiz__answer').removeClass('is-selected');
             $(this).addClass('is-selected');
             enableButton($btnNextQuestion);
+        }
+
+        function checkUserAnswer() {
+            var userAnswer = $quiz.find('.m-quiz__answer.is-selected').html();
+            if (userAnswer === allQuestions[counter].choices[allQuestions[counter].correctAnswer]) {
+                correctAnswers++;
+            }
+        }
+
+        function calculateUserScore() {
+            userScore = ((correctAnswers * 100) / allQuestions.length).toFixed();
+            alert(userScore);
         }
 
         function enableButton(button) {
