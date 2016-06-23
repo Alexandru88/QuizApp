@@ -478,7 +478,8 @@ img {
       background: #115863;
       color: #FFFFFF; }
   .m-btn[disabled] {
-    opacity: 0.4; }
+    opacity: 0.4;
+    cursor: default; }
     .m-btn[disabled]:active, .m-btn[disabled]:focus, .m-btn[disabled]:hover {
       background: #2980B9;
       color: #FFFFFF; }
@@ -586,9 +587,9 @@ img {
   text-align: center;
   -webkit-animation: fadeIn 0.5s;
           animation: fadeIn 0.5s; }
-  .m-results__score .is-passed {
+  .m-results__score.is-passed {
     color: #3ABD2B; }
-  .m-results__score .is-failed {
+  .m-results__score.is-failed {
     color: #FB2525; }
 
 .m-results__description {

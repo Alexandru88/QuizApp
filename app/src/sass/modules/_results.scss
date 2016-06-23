@@ -14,11 +14,11 @@
     text-align: center;
     animation: fadeIn 0.5s;
     
-    .is-passed {
+    &.is-passed {
         color: $green;
     }
     
-    .is-failed {
+    &.is-failed {
         color: $red;
     }
 }
