@@ -24,19 +24,10 @@
         color: $white;
     }
     
-    &--share {
-        margin-bottom: 20px;
-        margin-right: 10px;
-        background: $light-blue;
-        line-height: 2.5;
-        text-align: center;
-        
-        &:active,
-        &:focus,
-        &:hover {
-            background: darken($light-blue, 25%);
-            color: $white;
-        }
+    &--reload {
+        visibility: hidden;
+        opacity: 0;
+        animation: fadeIn .75s 1.5s forwards;
     }
     
     &[disabled] {

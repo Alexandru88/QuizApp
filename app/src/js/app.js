@@ -45,7 +45,6 @@ $(document).ready(function () {
 
         var counter = 0,
             correctAnswers = 0,
-            userScore,
             $card = $('.m-card'),
             $quiz = $('<div class="m-quiz"></div>'),
             $btnNextQuestion = $('<button id="nextQuestion" class="m-btn" disabled>Next Question</button>');
@@ -59,12 +58,16 @@ $(document).ready(function () {
                 checkUserAnswer();
                 counter++;
                 if (counter > allQuestions.length - 1) {
-                    calculateUserScore();
-                    //showResults();
+                    var score = getUserScore();
+                    showResults(score);
                     return;
                 }
                 changeQuestion();
                 disableButton($(this));
+            });
+            
+            $card.on('click', '#restartQuiz', function() {
+               location.reload(); 
             });
         }
 
@@ -95,9 +98,18 @@ $(document).ready(function () {
             }
         }
 
-        function calculateUserScore() {
-            userScore = ((correctAnswers * 100) / allQuestions.length).toFixed();
-            alert(userScore);
+        function getUserScore() {
+            return ((correctAnswers * 100) / allQuestions.length).toFixed();
+        }
+        
+        function showResults(score) {
+            $quiz.empty()
+                .append('<div class="m-results"></div>')
+                .children().first()
+                .append('<p class="m-results__description">Congratulations for completing the quiz! You scored:</p>')
+                .append('<p class="m-results__score">' + score + '%</p>')
+                .append('<a href="#" id="restartQuiz" class="m-btn m-btn--reload">Restart Quiz</a>');
+            $btnNextQuestion.hide();
         }
 
         function enableButton(button) {

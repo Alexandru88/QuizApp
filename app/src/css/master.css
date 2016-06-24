@@ -409,17 +409,6 @@ img {
   -webkit-animation: slideUp .75s;
           animation: slideUp .75s; }
 
-.l-col {
-  box-sizing: border-box;
-  padding: 5px 0;
-  float: left; }
-
-.l-col--sm {
-  width: 30%; }
-
-.l-col--md {
-  width: 70%; }
-
 .l-margin-bottom--none {
   margin-bottom: 0; }
 
@@ -468,15 +457,11 @@ img {
   .m-btn:active, .m-btn:focus, .m-btn:hover {
     background: #1B5479;
     color: #FFFFFF; }
-  .m-btn--share {
-    margin-bottom: 20px;
-    margin-right: 10px;
-    background: #24B9D0;
-    line-height: 2.5;
-    text-align: center; }
-    .m-btn--share:active, .m-btn--share:focus, .m-btn--share:hover {
-      background: #115863;
-      color: #FFFFFF; }
+  .m-btn--reload {
+    visibility: hidden;
+    opacity: 0;
+    -webkit-animation: fadeIn .75s 1.5s forwards;
+            animation: fadeIn .75s 1.5s forwards; }
   .m-btn[disabled] {
     opacity: 0.4;
     cursor: default; }
@@ -497,14 +482,6 @@ img {
   .m-card--b {
     padding: 10px;
     border: 2px solid #DDDDDD; }
-  .m-card--share {
-    text-align: center;
-    opacity: 0;
-    visibility: hidden;
-    -webkit-animation: zoomIn .5s 1s forwards;
-            animation: zoomIn .5s 1s forwards; }
-    .m-card--share > p {
-      margin-bottom: 20px; }
 
 /*=============================================================================
                                     TEXT RULES
@@ -577,29 +554,29 @@ img {
                                     RESULTS RULES
 =============================================================================*/
 .m-results {
-  margin-bottom: 40px; }
+  text-align: center; }
 
 .m-results__score {
-  display: block;
+  margin: .8em 0;
   font-size: 7em;
   line-height: 1em;
   font-weight: 700;
-  text-align: center;
-  -webkit-animation: fadeIn 0.5s;
-          animation: fadeIn 0.5s; }
+  visibility: hidden;
+  opacity: 0;
+  -webkit-animation: zoomIn .5s 1s forwards;
+          animation: zoomIn .5s 1s forwards; }
   .m-results__score.is-passed {
     color: #3ABD2B; }
   .m-results__score.is-failed {
     color: #FB2525; }
 
 .m-results__description {
-  margin-left: 10px;
+  margin-bottom: 40px;
   font-size: 16px;
-  vertical-align: middle;
   visibility: hidden;
   opacity: 0;
-  -webkit-animation: fadeIn 1s .5s forwards;
-          animation: fadeIn 1s .5s forwards; }
+  -webkit-animation: fadeIn 1s forwards;
+          animation: fadeIn 1s forwards; }
 
 /*=============================================================================
                                 GLOBAL ANIMATIONS
