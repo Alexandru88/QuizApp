@@ -58,16 +58,15 @@ $(document).ready(function () {
                 checkUserAnswer();
                 counter++;
                 if (counter > allQuestions.length - 1) {
-                    var score = getUserScore();
-                    showResults(score);
+                    showResults(getUserScore());
                     return;
                 }
                 changeQuestion();
                 disableButton($(this));
             });
-            
-            $card.on('click', '#restartQuiz', function() {
-               location.reload(); 
+
+            $card.on('click', '#restartQuiz', function () {
+                location.reload();
             });
         }
 
@@ -101,7 +100,7 @@ $(document).ready(function () {
         function getUserScore() {
             return ((correctAnswers * 100) / allQuestions.length).toFixed();
         }
-        
+
         function showResults(score) {
             $quiz.empty()
                 .append('<div class="m-results"></div>')
