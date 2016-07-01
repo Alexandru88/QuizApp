@@ -1,5 +1,5 @@
 /*=============================================================================
-                                    CARD RULES
+                                    #CARD RULES
 =============================================================================*/
 
 .m-card {
@@ -17,5 +17,9 @@
         border: 2px solid $gray;
     }
     
+    &.is-loading {
+        min-height: 300px;
+        background: url("#{$img-folder}/spinner.gif") center no-repeat $white;
+    }
 }
 
