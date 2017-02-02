@@ -1,13 +1,20 @@
 # demo quiz app for learning javascript
 
 
-# Install dependencies
+
+### Clone project skeleton
+
+```
+git clone https://github.com/Alexandru88/quiz-app.git ./
+```
+
+### Install dependencies
 
 ```
 npm install
 ```
 
-# Run project
+### Run project
 
 ```
 npm start
