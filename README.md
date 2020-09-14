@@ -1,7 +1,6 @@
 # demo quiz app for learning javascript
 
 
-
 ### Clone project skeleton
 
 ```
